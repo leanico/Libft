@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leaherre <leaherre@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/01 19:53:23 by leaherre          #+#    #+#             */
+/*   Updated: 2025/10/01 20:08:26 by leaherre         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - 32;
+	}
+	return (c);
+}
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int main() {
+//   char l = '9';
+//   char u = toupper(l);
+//   printf("%c in uppercase is %c", l, u);
+//   return 0;
+// }
