@@ -10,9 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-	(unsigned char *)dest;
-	(const unsigned char*)src;
+    if (!dst && !src)
+        return (NULL);
+
+    unsigned char *d = (unsigned char *)dst;
+    const unsigned char *s = (const unsigned char *)src;
+
+    while (n > 0)
+    {
+        *d = *s; 
+        d++;
+        s++;
+        n--;
+    }
+    return (dst);
 }
