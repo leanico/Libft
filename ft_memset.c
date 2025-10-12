@@ -17,12 +17,13 @@ void *ft_memset(void *s, int c, size_t n)
 	valor = (unsigned char)c;
 	unsigned char *p;
 	p = (unsigned char*)s;
+	size_t i;
+	i = 0;
 
-	while (n > 0)
+	while (i < n)
 	{
-		*p = valor;
-		p++;
-		n--;
+		p[i] = valor;
+		i++;
 	}
 	return (s);
 }
