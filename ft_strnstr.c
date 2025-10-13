@@ -10,49 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * funciondkadhad
- * @param big string 
- * @param little
- * @param len
- * @return devuelve krarha
- */
-#include <stdio.h>
- char *ft_strnstr(const char *big, const char *little, size_t len)
- {
-	int	i;
-	int	j;
+char *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    size_t i;
+    size_t j;
+    
+    if (*little == '\0')
+        return ((char *)big);
 
-	i = 0;
-	while (i < len)
-	{
-		if (little[0] == '\0')
-		return (big);
-	while (big[i] != '\0')
-	{
-		j = 0;
-		while (little[j] != '\0' && big[i + j] == little[j])
-		{
-			j++;
-		}
-		if (little [j] == '\0')
-		{
-			return (&big[i]);
-		}
-		i++;
-	}
-	return (0);
-}
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-  char myStr[] = "The rain in Spain falls mainly on the plains";
-  char *myPtr = ft_strnstr(myStr, "ain");
-  if (myPtr != NULL) {
-    printf("%s", myPtr);
-  }
-  return 0;
+    i = 0;
+    while (i < len && big[i] != '\0') 
+    {
+        j = 0;
+        while (little[j] != '\0' && big[i + j] == little[j] && (i + j) < len)
+        {
+            j++;
+        }
+        if (little[j] == '\0')
+            return ((char *)&big[i]); // ¡Éxito!
+            
+        i++;
+    }
+    return (NULL);
 }

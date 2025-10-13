@@ -10,30 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
 
-	i = 0;
-	while (str [i] != '\0')
-	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-			|| (str [i] >= 'A' && str[i] <= 'Z'))
+		if ((c >= 'a' && c <= 'z')
+			|| (c >= 'A' && c <= 'Z'))
 		{
-			i++;
+			return (1);
 		}
 		else
 		{
-			i++;
 			return (0);
 		}
-	}
-	return (1);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char *str = "";
-// 	printf("prueba %d", ft_isalpha (str));
-// 	return (0);
-// }

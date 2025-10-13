@@ -10,34 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
-	int	i;
+    int i;
+    i = 0;
+    while (s[i] != '\0')
+        i++;
 
-	i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-
-	while (s[i] != c)
-	{
-		i--;
-	}
-	return ((char *)s + i);
-
+    while (i >= 0)
+    {
+        if (s[i] == (char)c)
+            return ((char *)&s[i]);
+        
+        i--;
+    }
+    return (NULL);
 }
-
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main() {
-//   char myStr[] = "Hello World";
-//   char *myPtr2 = ft_strrchr(myStr, 'o');
-//   if (myPtr2 != NULL) {
-//     printf("Last: %s\n", myPtr2);
-//   }
-//   return 0;
-// }

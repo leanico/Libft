@@ -10,29 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
 
-	i = 0;
-	while (str [i] != '\0')
-	{
-		if (str[i] >= 32 && str[i] <= 126)
+		if (c >= 32 && c <= 126)
 		{
-			i++;
+			return (1);
 		}
 		else
 		{
-			i++;
 			return (0);
 		}
-	}
-	return (1);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char *str = "fjfjdbfdsç";
-// 	printf("prueba %d", ft_isprint (str));
-// 	return (0);
-// }

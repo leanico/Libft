@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/12 19:16:28 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/12 19:16:28 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/13 20:50:19 by marvin            #+#    #+#             */
+/*   Updated: 2025/10/13 20:50:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_calloc(size_t count, size_t size)
+char *ft_strdup(const char *s)
 {
-    size_t total_size;
-    void *ptr;
+    size_t  len;
+    char    *ptr;
 
-    total_size = count * size;
-    if (count != 0 && total_size / count != size)
-        return (NULL);
+    len = ft_strlen(s);
 
-    ptr = malloc(total_size); 
+    ptr = (char *)malloc(len + 1);
 
     if (ptr == NULL)
         return (NULL);
 
-    ft_bzero(ptr, total_size);
-
+    ft_memcpy(ptr, s, len + 1); 
     return (ptr);
 }
-

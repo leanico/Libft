@@ -10,27 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != c)
-	{
-		i++;
-	}
-	return ((char *)s + i);
-
+    int i;
+    
+    i = 0;
+    while (s[i] != '\0') 
+    {
+        if (s[i] == (char)c)
+            return ((char *)&s[i]);
+        i++;
+    }
+    if ((char)c == '\0') // si el caracter que busco es el nulo?
+        return ((char *)&s[i]);
+    
+    return (NULL);
 }
-// #include <stdio.h>
-// #include <string.h>
-
-// int main() {
-//   char myStr[] = "Hello World";
-//   char *myPtr = ft_strchr(myStr, 'W');
-//   if (myPtr != NULL) 
-//   {
-//     printf("%s", myPtr);
-//   }
-//   return 0;
-// }

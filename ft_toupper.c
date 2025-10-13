@@ -18,13 +18,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-
-// int main() {
-//   char l = '9';
-//   char u = toupper(l);
-//   printf("%c in uppercase is %c", l, u);
-//   return 0;
-// }

@@ -10,29 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char *str)
+int	ft_isdigit(int c)
 {
-	int	i;
 
-	i = 0;
-	while (str [i] != '\0')
-	{
-		if (str [i] >= 0 && str[i] <= 9)
+		if (c  >= '0' && c <= '9')
 		{
-			i++;
+			return(1);
 		}
 		else
 		{
-			i++;
 			return (0);
 		}
-	}
-	return (1);
 }
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char *str = "";
-// 	printf("prueba %d", ft_isdigit (str));
-// 	return (0);
-// }

@@ -12,19 +12,9 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		c = c + 32;
 	}
 	return (c);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-
-// int main() {
-//   char u = 'A';
-//   char l = tolower(u);
-//   printf("%c in lowercase is %c", u, l);
-//   return 0;
-// }

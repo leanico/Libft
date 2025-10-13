@@ -10,30 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char *str)
+int	ft_isascii(int c)
 {
-	int	i;
 
-	i = 0;
-	while (str [i] != '\0')
-	{
-		if (str [i] >= 00 && str[i] <= 127)
+		if (c >= 0 && c <= 127)
 		{
-			i++;
+		return (1);
 		}
 		else
 		{
-			i++;
 			return (0);
 		}
 	}
-	return (1);
-}
 
-// #include <stdio.h>
-// int main (void)
-// {
-// 	char *str = "";
-// 	printf("prueba %d", ft_isascii (str));
-// 	return (0);
-// }
+

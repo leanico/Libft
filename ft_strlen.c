@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
 	int	i;
 
@@ -21,12 +21,3 @@ int	ft_strlen(char *str)
 	}
 	return (i);
 }
-
-// int	main(void)
-// {
-// 	char *string = "la42ole";
-// 	int len;
-// 	len = ft_strlen(string);
-// 	printf("strlen = %d", len);
-// 	return (0);
-// }
