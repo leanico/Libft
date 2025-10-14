@@ -10,33 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char valor;
-	valor = (unsigned char)c;
-	unsigned char *p;
-	p = (unsigned char*)s;
-	size_t i;
-	i = 0;
+	unsigned char	valor;
+	unsigned char	*p;
+	size_t	i;
 
+	valor = (unsigned char)c;
+	p = (unsigned char *)s;
+	i = 0;
 	while (i < n)
 	{
 		p[i] = valor;
 		i++;
 	}
 	return (s);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char str[50] = "GeeksForGeeks is for programming geeks.";
-    printf("\nBefore memset(): %s\n", str);
-
-    ft_memset(str + 13, '.', 8*sizeof(char));
-
-    printf("After memset():  %s", str);
-    return 0;
 }

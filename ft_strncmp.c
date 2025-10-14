@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char * str1, const char * str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	int	i;
 
@@ -21,8 +21,8 @@ int	ft_strncmp(const char * str1, const char * str2, size_t n)
 		{
 			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		}
-        if (str1[i] == '\0')
-            break;
+		if (str1[i] == '\0')
+			break ;
 		i++;
 	}
 	return (0);

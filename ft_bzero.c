@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *p;
-	p = (unsigned char*)s;
+	unsigned char	*p;
 
+	p = (unsigned char *)s;
 	while (n > 0)
 	{
 		*p = 0;
