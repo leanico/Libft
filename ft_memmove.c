@@ -28,15 +28,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			i--;
 			d[i] = s[i];
 		}
+		return (dst);
 	}
-	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+	ft_memcpy(d, s, n);
 	return (dst);
 }
