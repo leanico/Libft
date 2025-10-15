@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leaherre <leaherre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 18:27:49 by leaherre          #+#    #+#             */
-/*   Updated: 2025/10/14 19:56:08 by leaherre         ###   ########.fr       */
+/*   Updated: 2025/10/15 20:48:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*d;
+	unsigned char		*d;
 	const unsigned char	*s;
 
 	d = (unsigned char *)dst;
