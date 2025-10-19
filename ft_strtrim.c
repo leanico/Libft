@@ -14,22 +14,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*start;
 	char	*end;
-	size_t	len;
 	char	*trim;
 	size_t	copy_len;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = (char *) s1;
-	len = ft_strlen(s1);
-	end = (char *)s1 + len - 1;
-	if (ft_strchr(set, *start) != NULL)
+	end = (char *)s1 + ft_strlen(s1) - 1;
+	if (*start == '\0' || *s1 == '\0')
 		return (ft_strdup(""));
 	while (ft_strchr(set, *start) != NULL)
 		start++;
-	while (end < start && ft_strchr(set, *end) != NULL)
+	while (end >= start && ft_strchr(set, *end) != NULL)
 		end--;
-	copy_len = end - start -1;
-	trim = malloc(copy_len + 1)
-		if (trim == NULL)
+	if (start > end)
+		return (ft_strdup(""));
+	copy_len = end - start + 1;
+	trim = (char *)malloc(copy_len + 1);
+	if (trim == NULL)
 		return (NULL);
 	ft_memcpy(trim, start, copy_len);
 	trim[copy_len] = '\0';

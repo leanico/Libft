@@ -10,43 +10,78 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int count_words(char const *s, char c)
+int	count_words(char const *s, char c)
 {
-    int count = 0;
+	int	count;
 
-    // Recorremos toda la cadena
-    while (*s != '\0')
-    {
-        // 1. BUCLER DE DESCARTE: Saltamos cualquier cantidad de delimitadores.
-        while (*s != '\0' && *s == c)
-            s++;
-
-        // 2. DETECCIÓN: Si no llegamos al final, significa que encontramos el inicio
-        //    de una nueva palabra (justo después del delimitador o al inicio de la cadena).
-        if (*s != '\0')
-            count++;
-
-        // 3. BUCLER DE CONSUMO: Saltamos toda la palabra.
-        //    Avanzamos hasta que encontramos el delimitador 'c' o el final de la cadena.
-        while (*s != '\0' && *s != c)
-            s++;
-    }
-    return (count);
+	count = 0;
+	while (*s != '\0')
+	{
+		while (*s != '\0' && *s == c)
+			s++;
+		if (*s != '\0')
+			count++;
+		while (*s != '\0' && *s != c)
+			s++;
+	}
+	return (count);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_free(char **arr)
 {
-    int     num_words;
-    char    **result;
+	int	i;
 
-    num_words = count_words(s, c);
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
 
-    // Asignación de memoria para el arreglo de punteros:
-    result = (char **)malloc(/* Tu cálculo aquí */);
+char	*ft_extract(char *s, char c, char **result, int i)
+{
+	char	*word_start;
+	size_t	word_len;
 
-    // Chequeo de seguridad
-    if (!result)
-        return (NULL);
+	if (*s != '\0')
+	{
+		word_start = (char *)s;
+		word_len = 0;
+		while (*s != '\0' && *s != c)
+		{
+			s++;
+			word_len++;
+		}
+		result[i] = (char *)malloc(word_len + 1);
+		if (result[i] == NULL)
+			return (ft_free (result));
+		ft_memcpy(result[i], word_start, word_len);
+		result[i][word_len] = '\0';
+	}
+	return (s);
+}
 
-    // ... el resto del código
+char	**ft_split(char const *s, char c)
+{
+	int		num_words;
+	char	**result;
+	int		i;
+
+	num_words = count_words(s, c);
+	result = (char **)malloc((num_words + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (i < num_words)
+	{
+		while (*s != '\0' && *s == c)
+			s++;
+		s = ft_extract(s, c, result, i);
+		i++;
+	}
+	result[num_words] = NULL;
+	return (result);
 }
