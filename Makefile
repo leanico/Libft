@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/17 21:16:37 by marvin            #+#    #+#              #
+#    Updated: 2025/10/17 21:16:37 by marvin           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
@@ -30,6 +42,9 @@ SRCS =ft_atoi.c\
 				ft_tolower.c\
 				ft_toupper.c\
 				ft_substr.c\
+				ft_strjoin.c\
+				ft_strtrim.c\
+				ft_split.c\
 
 OBJS = $(SRCS:.c=.o) // una variable cuya dependencia es convertir los . c en .o
 
