@@ -27,17 +27,17 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	**ft_free(char **arr)
+char	**ft_free(char **mem)
 {
 	int	i;
 
 	i = 0;
-	while (arr[i])
+	while (mem[i] != NULL)
 	{
-		free(arr[i]);
+		free(mem[i]);
 		i++;
 	}
-	free(arr);
+	free(mem);
 	return (NULL);
 }
 
