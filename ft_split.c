@@ -72,6 +72,8 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	num_words = count_words(s, c);
 	result = (char **)malloc((num_words + 1) * sizeof(char *));
 	if (!result)
@@ -82,6 +84,8 @@ char	**ft_split(char const *s, char c)
 		while (*s != '\0' && *s == c)
 			s++;
 		s = ft_extract(s, c, result, i);
+		if (s == NULL)
+			return (NULL);
 		i++;
 	}
 	result[num_words] = NULL;
