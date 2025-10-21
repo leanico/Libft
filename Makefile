@@ -53,19 +53,19 @@ SRCS =ft_atoi.c\
 				ft_putendl_fd.c\
 				ft_putnbr_fd.c\
 
-OBJS = $(SRCS:.c=.o) // una variable cuya dependencia es convertir los . c en .o
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(AR) $(ARFLAGS) $(NAME) $(OBJS) //crear el ejecutable
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o : %.c
-	@$(CC) $(CCFLAGS) -c -o $@ $< //indicadores
+	@$(CC) $(CCFLAGS) -c -o $@ $<
 clean:
 	@$(RM) $(OBJS)
 fclean: clean
 	@rm -f $(NAME)
-re: fclean all //limpiar y recompilar todo
+re: fclean all
 
 .PHONY: all clean fclean re

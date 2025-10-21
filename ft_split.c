@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	count_words(char const *s, char c)
 {
 	int	count;
@@ -27,7 +29,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	**ft_free(char **mem)
+char	*ft_free(char **mem)
 {
 	int	i;
 
@@ -41,7 +43,7 @@ char	**ft_free(char **mem)
 	return (NULL);
 }
 
-char	*ft_extract(char *s, char c, char **result, int i)
+const char	*ft_extract(const char *s, char c, char **result, int i)
 {
 	char	*word_start;
 	size_t	word_len;
