@@ -18,7 +18,7 @@ NAME = libft.a
 AR = ar
 ARFLAGS = rcs
 
-SRCS =ft_atoi.c\
+SRCS = ft_atoi.c\
 				ft_bzero.c\
 				ft_calloc.c\
 				ft_isalnum.c\
@@ -61,7 +61,7 @@ $(NAME) : $(OBJS)
 	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o : %.c
-	@$(CC) $(CCFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 clean:
 	@$(RM) $(OBJS)
 fclean: clean

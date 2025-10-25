@@ -29,7 +29,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*ft_free(char **mem)
+void	ft_free(char **mem)
 {
 	int	i;
 
@@ -40,7 +40,6 @@ char	*ft_free(char **mem)
 		i++;
 	}
 	free(mem);
-	return (NULL);
 }
 
 const char	*ft_extract(const char *s, char c, char **result, int i)
@@ -59,7 +58,10 @@ const char	*ft_extract(const char *s, char c, char **result, int i)
 		}
 		result[i] = (char *)malloc(word_len + 1);
 		if (result[i] == NULL)
-			return (ft_free (result));
+		{
+			ft_free(result);
+			return (NULL);
+		}
 		ft_memcpy(result[i], word_start, word_len);
 		result[i][word_len] = '\0';
 	}

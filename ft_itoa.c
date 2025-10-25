@@ -22,7 +22,7 @@ int	ft_len(int n)
 	if (copy < 0)
 	{
 		len = 1;
-		copy = copy * -1;
+		copy = -copy;
 	}
 	if (copy == 0)
 		len = 1;
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	if (n < 0)
-		copy = copy * -1;
+		copy = -copy;
 	str[len] = '\0';
 	i = len - 1;
 	if (copy == 0)
