@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leaherre <leaherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 15:40:14 by leaherre          #+#    #+#             */
-/*   Updated: 2025/10/26 15:40:14 by leaherre         ###   ########.fr       */
+/*   Created: 2025/10/26 15:37:39 by leaherre          #+#    #+#             */
+/*   Updated: 2025/10/26 15:37:39 by leaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	str_len;
-	char	*sub;
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*new_content;
 
-	if (!s)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	str_len = ft_strlen(s);
-	if (start >= str_len)
+	new_list = NULL;
+	while (lst)
 	{
-		sub = (char *)malloc(1);
-		if (sub == NULL)
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
+		if (new_node == NULL)
+		{
+			del(new_content);
+			ft_lstclear(&new_list, del);
 			return (NULL);
-		sub[0] = '\0';
-		return (sub);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	if (len > str_len - start)
-		len = str_len - start;
-	sub = (char *)malloc(len + 1);
-	if (sub == NULL)
-		return (NULL);
-	ft_memcpy(sub, s + start, len);
-	sub[len] = '\0';
-	return (sub);
+	return (new_list);
 }

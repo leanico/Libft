@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: leaherre <leaherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 10:59:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/20 10:59:08 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/26 15:36:55 by leaherre          #+#    #+#             */
+/*   Updated: 2025/10/26 15:36:55 by leaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+static int	ft_len(int n)
 {
 	int		len;
 	long	copy;

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leaherre <leaherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/26 15:39:10 by leaherre          #+#    #+#             */
-/*   Updated: 2025/10/26 15:39:10 by leaherre         ###   ########.fr       */
+/*   Created: 2025/10/26 15:37:27 by leaherre          #+#    #+#             */
+/*   Updated: 2025/10/26 15:37:27 by leaherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	len;
-	char	*ptr;
-
-	len = ft_strlen(s);
-	ptr = (char *)malloc(len + 1);
-	if (ptr == NULL)
-		return (NULL);
-	ft_memcpy(ptr, s, len + 1);
-	return (ptr);
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
