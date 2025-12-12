@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len3;
 	char	*s3;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	len3 = len1 + len2;
@@ -30,3 +32,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[len3] = '\0';
 	return (s3);
 }
+
